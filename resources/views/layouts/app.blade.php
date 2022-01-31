@@ -21,8 +21,10 @@
                     <div class="flex items-center justify-between h-16 px-4 sm:px-0">
                         <div class="flex items-center">
                             <div class="flex-shrink-0">
-                                <img class="h-8 w-8" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                                     alt="Workflow">
+                                <a href="/">
+                                    <img class="h-8 w-8" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                                         alt="Workflow">
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -32,7 +34,7 @@
         <header class="pt-10">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h1 class="text-3xl font-bold text-white">
-                    Dashboard
+                    {{$title}}
                 </h1>
             </div>
         </header>
@@ -40,7 +42,7 @@
 
     <main class="-mt-32">
         <div class="max-w-7xl mx-auto pb-12 px-4 sm:px-6 lg:px-8">
-            @yield('content')
+            {{ $slot }}
         </div>
     </main>
 </div>

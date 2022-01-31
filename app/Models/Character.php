@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Services\BreakingBad\DeathService;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -62,5 +63,13 @@ class Character extends Model
             'deceased' => 'rose',
             'unknown' => 'indigo'
         ][$this->status] ?? 'gray';
+    }
+
+    public function getTotalDeathCausedAttribute()
+    {
+        $service = new DeathService();
+        $response = $service->getDeathCountByAuthor($this->name);
+
+        return collect($response)->first()['deathCount'];
     }
 }

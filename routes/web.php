@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\CharacterController;
-use App\Http\Livewire\Dashboard;
+use App\Http\Livewire\Character;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,5 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', Dashboard::class);
-Route::get('/character/{character_id}', [CharacterController::class, 'show'])->name('character.show');
+Route::get('/', Character\Index::class);
+Route::get('/characters/{character}', Character\Show::class)->name('character.show');

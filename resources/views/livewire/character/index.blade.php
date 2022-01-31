@@ -60,8 +60,6 @@
                             </tr>
                             </thead>
                             <tbody>
-
-                            <!-- Odd row -->
                             @foreach($characters as $character)
                                 <tr class="bg-white">
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
